@@ -7,6 +7,7 @@
         static void Main(string[] args)
         {
             PlayGreeting.Play();
+            asciiArt.Show();
             Console.WriteLine("Welcome to the Cyber Security Awareness Bot!");
             Console.Write("Enter your name: ");
             string name = Console.ReadLine();
