@@ -22,11 +22,3 @@ How to Run
 The chatbot uses a loop to continuously accept user input.  
 It processes the input by converting it to lowercase and checking for keywords using `if-else` statements.  
 Based on the detected keywords, it returns predefined responses related to cybersecurity topics.
-
-
-
-
----
-
-## 👤 Author
-Your Name Here
