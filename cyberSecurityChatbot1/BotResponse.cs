@@ -26,9 +26,9 @@ namespace cyberSecurityChatbot1
                     "These attacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.");
 
             }
-            else if (input.Contains("What can I ask"))
+            else if (input.Contains("what can i ask"))
             {
-                Console.WriteLine("You can ask about Passwords, Phishing and Safe browsing");
+                Console.WriteLine("You can ask about My purpose,How i am, Passwords, Phishing and Safe browsing");
                 Console.WriteLine();
 
             }
