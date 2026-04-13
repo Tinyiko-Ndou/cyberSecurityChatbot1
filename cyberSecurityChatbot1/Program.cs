@@ -25,7 +25,7 @@
                     Console.WriteLine("Goodbye!!");
                     break;
                 }
-               // Bot.Respond(input, name);
+                Bot.Respond(input, name);
             }
 
 
