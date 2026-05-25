@@ -11,11 +11,15 @@ namespace cyberSecurityChatbot1
     {
         public static void Respond(string input, string name)
         {
+            // Sentiment Detection
+            Sentiment.DetectEmotion(input);
+            return;
+
             if (input.Contains("how are you"))
             {
                 Console.WriteLine("Im functioning perfectly, " + name + " Ready to keep you safe online.");
             }
-            else if (input.Contains("purpose")) 
+            else if (input.Contains("purpose"))
             {
                 Console.WriteLine("My purpose is to teach you about Cyber security and Online Safety");
                 Console.WriteLine();
@@ -28,31 +32,57 @@ namespace cyberSecurityChatbot1
             }
             else if (input.Contains("what can i ask"))
             {
-                Console.WriteLine("You can ask about My purpose,How i am, Passwords, Phishing and Safe browsing");
+                Console.WriteLine("You can ask about:");
+                Console.WriteLine("- Passwords");
+                Console.WriteLine("- Phishing");
+                Console.WriteLine("- Safe browsing");
+                Console.WriteLine("- Cyber security");
+                Console.WriteLine("- And you can ask me to remember your favourite topic by asking 'remember' after asking about one of the topics above");
+
                 Console.WriteLine();
 
             }
-            else if (input.Contains("passwords"))
+            else if (input.Contains("password"))
             {
-                Console.WriteLine("Use strong Passwords that include a mix of letters, numbers, and special characters." +
-                    " Avoid using easily guessable information like birthdays or common words." +
-                    " Consider using a password manager to generate and store complex passwords securely.");
-                Console.WriteLine();
+                Memory.FavouriteTopic = "Passwords";
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(RandomResponses.GetPasswordTip());
+                Console.ResetColor();
             }
             else if (input.Contains("phishing"))
             {
-                Console.WriteLine("Be careful of fake emails asking you for your personal info" +
-                    " and always verify the sender before clicking on any links or providing sensitive information." +
-                    " Report any suspicious emails to your IT department or email provider.");
-                Console.WriteLine();
+                Memory.FavouriteTopic = "phishing";
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(RandomResponses.GetPhishingTip());
+                Console.ResetColor();
             }
-            else if (input.Contains("safe browsing"))
+            else if (input.Contains("safe browsing") || input.Contains("browsing"))
             {
-                Console.WriteLine("Always check website URLs and avoid suspicious links" +
-                    " Use secure connections (https) and keep your browser and software up to date." +
-                    " Consider using a reputable antivirus program and enable firewalls for added protection.");
-                Console.WriteLine();
+                Memory.FavouriteTopic = "safe browsing";
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(RandomResponses.GetSafeBrowsingTip());
+                Console.ResetColor();
             }
+            else if (input.Contains("remember"))
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+
+                if (Memory.FavouriteTopic != null)
+                {
+                    Console.WriteLine("You previously asked about " + Memory.FavouriteTopic);
+                }
+                else
+                {
+                    Console.WriteLine("I dont have anything in memory yet. Ask me about Passwords, Phishing or Safe browsing to create a memory.");
+                }
+                    Console.ResetColor();
+            }
+               
+                
+
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;

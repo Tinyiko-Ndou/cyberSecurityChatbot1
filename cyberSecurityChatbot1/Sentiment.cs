@@ -16,12 +16,14 @@ namespace cyberSecurityChatbot1
                 Console.WriteLine("Its okay to feel worried. Cyber threats can happen to anyone. Remember to stay informed and take precautions.");
                 Console.WriteLine("I will help you learn how to stay safe online.");
                 Console.ResetColor();
+                return;
             }
             else if (input.Contains("curious"))
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("Curiosity is great. Learning cyber securityhelpsprotect you online.");
+                Console.WriteLine("Curiosity is great. Learning cyber security helps protect you online.");
                 Console.ResetColor();
+                return;
             }
             else if (input.Contains("frustrated"))
             {
@@ -29,7 +31,9 @@ namespace cyberSecurityChatbot1
                 Console.WriteLine("I understand that this can feel frustrating.");
                 Console.WriteLine("Lets Solve it step by step.");
                 Console.ResetColor();
+                return;
             }
+            
         }
     }
 }
