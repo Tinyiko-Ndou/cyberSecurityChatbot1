@@ -8,6 +8,7 @@
         {
             PlayGreeting.Play();
             asciiArt.Show();
+            Console.Title = "Cyber Security Awareness Bot";
 
             // 2 second delay before showing the welcome message
             Thread.Sleep(2000);
@@ -24,6 +25,11 @@
             {
                 Console.Write("\nAsk me something (exit to Quit): ");
                 string input = Console.ReadLine().ToLower();
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("Please type something");
+                    continue;
+                }
 
                 if (input == "exit")
                 {
